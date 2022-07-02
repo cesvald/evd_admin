@@ -1,0 +1,57 @@
+.container
+  .row.align-items-center.justify-content-center.vh-100
+    .col-md-4.col-sm-10.col-12.border.p-4.bg-white.d-flex.align-items-center.flex-column
+      = image_tag "logo_evd.png", class: "w-50"
+      = form_for resource, as: resource_name, url: session_path(resource_name), html: { class: "form-sessions sign-in" } do |f|
+        h2.form-signin-heading.text-center Sistema Administrativo
+        br
+        = hidden_field_tag :viewport
+        .field
+          = f.email_field :email, autofocus: true, class: "form-control", placeholder: "Correo Electrónico"
+        br
+        .field
+          = f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "Contraseña"
+        - if devise_mapping.rememberable?
+          = f.hidden_field :remember_me, value: true
+        br
+        .actions.d-flex.justify-content-center
+          = f.submit "Entrar", class: "btn btn-lg btn-primary btn-block w-100"
+        br
+        .links-wrapper
+          = render "devise/shared/links"
+
+css: 
+  body {
+    background: url("#{asset_path("login_background.jpg")}");
+    background-size: cover;
+    background-color: black;
+  }
+  
+  .form-control {
+    border: 1px solid #7e5e22
+  }
+
+  .form-control:focus {
+    color: #212529;
+    background-color: #fff;
+    border-color: #ffa600;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem #ffa60040;
+  }
+
+  .btn.btn-primary {
+    background-color: #F29527;
+    border-color: #F29527;
+  }
+
+  .btn.btn-primary:hover {
+    background-color: #F29527;
+    border-color: #F29527;
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover, 
+  input:-webkit-autofill:focus, 
+  input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+  }

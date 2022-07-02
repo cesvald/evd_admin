@@ -15,7 +15,12 @@ gem "pg", "~> 1.1"
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
 
+gem "paranoia", "~> 2.2"
+
 gem 'devise'
+
+#Authorization
+gem 'pundit'
 
 gem 'slim'
 
@@ -30,7 +35,6 @@ gem "turbo-rails"
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
 
-gem "tailwindcss-rails"
 # Bundle and process CSS [https://github.com/rails/cssbundling-rails]
 #gem "cssbundling-rails"
 
